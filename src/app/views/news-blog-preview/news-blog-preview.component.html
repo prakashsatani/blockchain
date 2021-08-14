@@ -1,0 +1,158 @@
+<header class="mt-5"></header>
+<section class="showcase bg-white pb-3 pt-5 page-bg-white">
+  <div class="container">
+    <div class="row">
+       <div class="col-6 col-md-3 mt-2">
+            <button type="button" id="allPost" class="btn bg-btn w-100" routerLink="/news-updates">All Posts</button>
+       </div>
+       <div class="col-6 col-md-3 mt-2">
+          <button type="button" id="wallet" class="btn bg-btn w-100" routerLink="/news-updates">Wallets</button>
+       </div>
+       <div class="col-1 col-md-1 mt-2"></div>
+       <div class="col-12 col-md-4 mt-2">
+          <!-- <div class="input-group">
+           <input type="text" class="form-control" placeholder="Search">
+           <div class="input-group-btn">
+             <button class="btn btn-default border border-1" type="submit">
+               <i class="bi bi-search"></i>
+             </button>
+           </div>
+         </div> -->
+       </div>
+    </div>
+    <div class="card mt-5 p-3">
+      <div class="card-header border-0 bg-white">
+         <div class="row">
+            <div class="col-2 col-md-1">
+               <img src="assets/images/logo.svg" alt="BCM" />
+            </div>
+            <div class="col-4 col-md-4">
+              <span><div>ADMIN</div>
+               <div class="text-primary">
+               {{ newsBlogData.created_at | date : 'mediumDate'}}</div></span>
+            </div>
+            <div class="col-4 col-md-6"></div>
+            <div class="col-2 col-md-1">
+               <i class="bi bi-three-dots-vertical"></i>
+            </div>
+         </div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">{{newsBlogData.title}}</h4>
+
+        <div *ngIf='newsBlogData.video_link?.length != 0'>
+          <video class="w-100 img-hg mt-5" controls src="{{newsBlogData.video_link}}">
+            Sorry, your browser doesn't support HTML5 <code>video</code>, but you can download this video from the <a href="{{newsBlogData.video_link}}" target="_blank">Internet Archive</a>.
+          </video>
+        </div>
+
+        <div *ngFor="let video of newsBlogData.file">
+          <video id="uploadedVideo" class="w-100 img-hg mt-5" controls *ngIf='newsBlogData.video_link?.length == 0 && video.mimetype == "video/mp4"'>
+            <source
+            [src]="sanitizeUrl('https://api.blockchainmind.com/upload/'+video.filename)"
+             type="video/mp4">
+          </video>
+        </div>
+
+        <div class="mt-5 ck-content" [innerHTML]="sanitizeHtml(newsBlogData.description)"></div>
+        <div class="col-md-12">
+          <img class="img-hg w-100" *ngIf="newsBlogData.image != null" src="{{newsBlogData.image}}" alt="Blog Image"/>
+        </div>
+
+        <!-- <div class="row mt-5" *ngIf="newsBlogData.file?.length != 0 ">
+          <div id="carouselTestimonialControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" *ngFor="let img of newsBlogData.file let i = index" id="carousel-item-{{i}}">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0" *ngIf="img.mimetype == jpgType || img.mimetype == pngType">
+                  <img class="w-100 h-75"
+                  [src]="sanitizeUrl('https://api.blockchainmind.com/upload/'+img.filename)"
+                 alt="..." />
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonialControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonialControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div> -->
+
+      </div>
+      <div class="card-footer border-0 mt-5 bg-white">
+         <div class="row">
+            <div class="col-6 col-md-3 p-2">
+               <div><label class="text-primary">{{newsBlogData.comments == null ? 0 : newsBlogData.comments}}</label> comments</div>
+            </div>
+            <div class="col-6 col-md-2 p-2">
+             <div><label class="text-primary" id="likeUnlikeBlog_{{newsBlogData._id}}">{{newsBlogData.like == null ? 0 : newsBlogData.like}}</label>&nbsp;<i class="bi bi-heart text-danger" id="likeUnlikeBlogId_{{newsBlogData._id}}" (click)="likeUnlikeBlog(newsBlogData._id, newsBlogData.like)"></i></div>
+            </div>
+            <div class="col-1 col-md-3"></div>
+            <div class="col-12 col-md-4 p-1">
+               <!-- <ul class="list-inline mb-0">
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-linkedin fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!"><i class="bi-youtube fs-3"></i></a>
+                    </li>
+                </ul> -->
+                <share-buttons theme="modern-light" [include]="['facebook', 'twitter', 'linkedin', 'copy']"></share-buttons>
+            </div>
+         </div>
+      </div>
+    </div>
+    <div class="card mt-5 p-3">
+      <div class="card-header border-0">
+        <h5 class="card-title">Comments</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="mb-3">
+              <form [formGroup]="commentForm">
+                <textarea class="form-control" rows="4" formControlName="comment"></textarea>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-2 p-3">
+            <button class="btn btn-primary" (click)="publishComment()">Publish</button>
+          </div>
+        </div>
+        <h4 class="mt-3 mb-3">All Comments</h4>
+        <div class="card mb-3" *ngFor="let comment of commentData">
+          <div class="row g-0">
+            <div class="col-md-2">
+              <img class="col-12 col-md-11" src="assets/images/No_Image_Available.jpg" alt="...">
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+                <h5 class="card-title text-primary">User Name</h5>
+                <p class="card-text">{{comment.comment}}</p>
+                <p class="card-text"><small class="text-muted">{{comment.created_at}}</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5 shadow p-3 bg-body rounded" *ngIf="commentData?.length == 0">
+          <h4 class="text-center">No comments Available</h4>
+        </div>
+      </div>
+    </div>
+    <!-- <div>{{emojiData}}</div> -->
+  </div>
+  <hr class="text-secondary mt-5">
+</section>

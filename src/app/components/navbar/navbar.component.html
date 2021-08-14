@@ -1,0 +1,67 @@
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-logo-m-right" href="/home">
+                <img src="assets/images/logo.svg" alt="" width="30" height="auto" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-lg-0">
+                     <!-- <li class="nav-item navbar-right">
+                        <a class="nav-link text-white text-header" href="/home" tabindex="-1" aria-disabled="true">Home</a>
+                    </li> -->
+                     <li class="nav-item navbar-right">
+                        <a class="nav-link text-header" href="https://www.behance.net/blockchainmind" target="_blank" tabindex="-1" aria-disabled="true">Our Portfolio</a>
+                    </li>
+
+                    <li class="nav-item dropdown navbar-right">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" [class.colorBlue]="url === '/about' || url === '/our-story' || url === '/our-team' || url === '/client-partner'">Company</a>
+                            <div class="dropdown-menu" style="text-align: center;">
+                                <a href="/about" class="dropdown-item" [class.colorBlue]="url === '/about'">About</a>
+                                <a href="/our-story" class="dropdown-item" [class.colorBlue]="url === '/our-story'">Our Story</a>
+                                <a href="/our-team" class="dropdown-item" [class.colorBlue]="url === '/our-team'">Our Team</a>
+                                <a href="/client-partner" class="dropdown-item" [class.colorBlue]="url === '/client-partner'">Clients and Partners</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown navbar-right">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"  data-toggle="dropdown" [class.colorBlue]="url === '/software-service' ||
+                            url === '/exchange-clone' || url === '/defi-clone' || url === '/opensea-clone' || url === '/investor-relations'">Product & Services</a>
+                            <div class="dropdown-menu" style="text-align: center;">
+                                <a class="dropdown-item" href="/software-service" [class.colorBlue]="url === '/software-service'">Software Services</a>
+                                <a class="dropdown-item" href="/exchange-clone" [class.colorBlue]="url === '/exchange-clone'">Exchange Clone</a>
+                                <a class="dropdown-item" href="/defi-clone" [class.colorBlue]="url === '/defi-clone'">DeFi Clone</a>
+                                <a class="dropdown-item" href="/opensea-clone" [class.colorBlue]="url === '/opensea-clone'">Opensea Clone Script</a>
+                                <a class="dropdown-item" href="/investor-relations" [class.colorBlue]="url === '/investor-relations'">Investor Relations</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item navbar-right">
+                        <a class="nav-link text-header" href="/news-updates" [class.colorBlue]="url === '/news-updates'" tabindex="-1" aria-disabled="true">News & Blogs</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown navbar-right">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">News & Blogs</a>
+                        <ul class="dropdown-menu" aria-labelledby="blogDropdown">
+                            <a class="dropdown-item" href="#">Blog 1</a>
+                            <a class="dropdown-item" href="#">Blog 2</a>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item navbar-right">
+                        <a class="nav-link text-header" href="/careers" [class.colorBlue]="url === '/careers'" tabindex="-1" aria-disabled="true">Careers</a>
+                    </li>
+                    <li class="nav-item navbar-right">
+                        <a class="nav-link text-header" href="/contact" [class.colorBlue]="url === '/contact'" tabindex="-1" aria-disabled="true">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex ">
+                    <a href="/contact" style="margin: 0px auto">
+                        <button class="btn btn-flat btn-sm text-header bg-btn" type="button">LETS GET STARTED</button>&nbsp;&nbsp;&nbsp;
+                    </a>
+                    <!-- <a class="btn btn-outline-secondary btn-sm text-header text-dark" type="button" href="/login">LOGIN</a> -->
+                </form>
+            </div>
+        </div>
+    </nav>

@@ -1,0 +1,27 @@
+.img-hg {
+	height: 12rem;
+  width: 88% !important;
+}
+
+section {
+  text-align: justify;
+}
+
+.row1 > * {
+  padding-right: 0px !important;
+}
+.card-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+    overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+	/* margin-left: 10px; */
+}
+@media only screen and (max-width: 768px) {
+  .img-hg {
+    height: auto;
+    width: 100% !important;
+  }
+}

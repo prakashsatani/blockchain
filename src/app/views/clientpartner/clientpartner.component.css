@@ -1,0 +1,71 @@
+.logoImage{
+    /* height: 70%;
+    width: 80%; */
+    height: 7rem;
+    width: 100%;
+    margin-bottom: 0px !important;
+
+}
+.logoImage2{
+    /* height: 70%;
+    width: 80%; */
+    /* height: 7rem; */
+    width: auto;
+margin-bottom: 0px !important;
+}
+
+.cardSize{
+    height: 100%;
+    width: 100%;
+}
+.mySlidesClient,.mySlidesPartner {
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 100px);
+    flex-direction: column;
+}
+.numbertext{
+      top: 0.5rem;
+    left: 0.5rem;
+}
+@media only screen and (min-width: 1200px) {
+    .title{
+      font-size: 14px;
+      padding: 1rem 0px !important;
+    }
+}
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .title{
+      font-size: 8.6px;
+      padding: 1rem 0px !important;
+    }
+}
+@media only screen and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+    .title{
+      font-size: 12px;
+      padding: 1rem 0px !important;
+    }
+}
+
+@media only screen and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait) {
+    .title{
+      font-size: 12px;
+      padding: 1rem 0px !important;
+    }
+}
+@media only screen and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape) {
+    .title{
+      font-size: 14px;
+      padding: 1rem 0px !important;
+    }
+}
+
+@media only screen and (max-width: 600px){
+.title {
+    font-size: 13px;
+    padding: 1rem 0 !important;
+}
+.text-white{
+color: #fff !important;
+}
+}

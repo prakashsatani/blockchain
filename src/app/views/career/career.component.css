@@ -1,0 +1,48 @@
+.liData li {
+    text-align: left !important;
+}
+.card-img-top-div{
+  text-align: center;
+}
+.card-img-top-div img{
+  width: 260px;
+  height: 260px;
+}
+.row1 {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  margin-top: 2rem;
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+.whatsapp-btn{
+    width: 14rem;
+  }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .liData li {
+    text-align: center !important;
+    list-style: none;
+  }
+  .card-img-top-div{
+    text-align: center;
+  }
+  .card-img-top{
+    width: 60% !important;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .liData {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .btn-center{
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .row1{
+    margin-top: 1rem;
+  }
+}

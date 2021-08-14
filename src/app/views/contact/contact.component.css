@@ -1,0 +1,31 @@
+.error{
+    color: red;
+    margin: 0px;
+}
+
+.input{
+    margin-bottom: 0px !important;
+}
+
+.errorShow{
+    display:block;
+}
+
+.errorHide{
+    display: none;
+}
+
+.messageSucess{
+    color: green;
+}
+
+.buttonDis:disabled{
+    cursor: not-allowed;
+  pointer-events: all !important;
+
+}
+@media only screen and (max-width: 600px){
+  .mob-pad{
+      margin-top: 1rem;
+    }
+}

@@ -1,0 +1,65 @@
+<header class="job-header bg-white page-bg-white">
+	<div class="container position-relative">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 text-center">
+				<h1>{{serviceData.title}}</h1>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<hr class="text-secondary">
+	</div>
+</header>
+<section class="showcase bg-white pb-3 pt-5">
+	<div class="container">
+		<div *ngFor="let file of serviceData.logo">
+			<video class="w-100 img-hg mt-5" controls *ngIf="file.mimetype == 'video/mp4'" height="350px">
+			  <source
+			  [src]="sanitizeUrl('https://api.blockchainmind.com/upload/'+file.filename)" type="video/mp4">
+	        </video>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<div class="row">
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	          <div class="row">
+	            <div class="col-8 col-sm-8 col-md-3 col-lg-3 col-xl-3">
+	                <div class="bg-line"></div>
+	            </div>
+	            <div class="col-2 col-sm-2 col-md-5 col-lg-5 col-xl-5"></div>
+	          </div>
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1"></div>
+	    </div>
+      	<h2 class="mt-3">Description</h2>
+      	<div class="row mt-3 p-3" id="descriptionService">
+      	</div>
+	</div>
+	<!-- <div class="container mt-5" *ngIf="serviceData.logo?.length > 1">
+		<div class="row mt-5" style="width: 100%; justify-content: center;">
+
+          <div id="carouselTestimonialControls" class="carousel slide" style="width: 55%;" data-bs-ride="carousel">
+
+            <div class="carousel-inner"  id="carouselImg">
+              <div class="carousel-item active" *ngFor="let file of serviceDataFile let i = index" id="carousel-item-{{i}}">
+                <div>
+                  <img style="width: 100%; height: 100%;" [src]="sanitizeUrl('https://api.blockchainmind.com/upload/'+file.filename)" alt="..." />
+                </div>
+              </div>
+            </div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonialControls" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			  </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonialControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+	</div> -->
+
+	<hr class="text-secondary mt-5">
+</section>

@@ -1,0 +1,36 @@
+.imageCenter img{
+    display:block;margin:auto;
+}
+
+.titleData{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0rem !important;
+}
+.whatsapp-btn{
+    width: 14rem;
+  }
+.descriptionData{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0rem !important;
+    padding-bottom: 1.5rem !important;
+    text-align: justify;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .btn-center{
+    text-align: center;
+  }
+  .whatsapp-btn-div{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .whatsapp-btn{
+    width: 14rem;
+  }
+  .mx-1:last-child img{
+    width: 45%;
+    margin: auto;
+  }
+}

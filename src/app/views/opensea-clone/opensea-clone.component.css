@@ -1,0 +1,78 @@
+.btn-border {
+	border-radius: 15px;
+}
+
+.opensea{
+	margin-top: 10px;
+}
+
+.rowItem{
+	display: flex; flex-direction: row; margin-top: 1rem;
+}
+
+.displayData{
+	display: flex;
+}
+.whatsapp-btn{
+    width: 14rem;
+  }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.fugitive{
+		display: none;
+	}
+	.fugitiveShow{
+		display: block;
+	}
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.fugitive{
+		display: none;
+	}
+
+
+	.fugitiveShow{
+		display: block;
+	}
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.fugitive{
+		display: block;
+	}
+	.fugitiveShow{
+		display: none;
+	}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.fugitive{
+		display: block;
+	}
+	.fugitiveShow{
+		display: none;
+	}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.fugitive{
+		display: block;
+	}
+	.fugitiveShow{
+		display: none;
+	}
+
+
+}

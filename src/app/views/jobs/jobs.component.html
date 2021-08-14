@@ -1,0 +1,150 @@
+<header class="job-header bg-white">
+	<div class="container position-relative">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 text-center">
+				<h1>Job Listings</h1>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+</header>
+<section class="showcase bg-white pb-3 pt-5 page-bg-white">
+	<div class="container">
+		<div class="row">
+			<div class="row" *ngIf="allJobs?.length != 0 ">
+				<div class="col-md-12" *ngFor="let allJob of allJobs">
+				    <div class="card border-0 shadow p-3 mb-5 bg-body rounded">
+				      <div class="card-body">
+				        <h5 class="card-title text-primary">{{ allJob.title }}</h5>
+				        <p class="card-text mt-3">{{ allJob.short_description }}</p>
+				        <div class="row">
+				        	<div class="col-md-4 mt-3">
+				        		<div><i class="bi bi-clock"></i>&nbsp;&nbsp;<label>{{allJob.job_type}}</label></div>
+				        		<div><i class="bi bi-display"></i>&nbsp;&nbsp;<label>{{allJob.location_type}}</label></div>
+				        	</div>
+				        	<div class="col-md-4 mt-3">
+				        		<div>Published Date&nbsp;:&nbsp;<label>{{ allJob.published_at | date : 'mediumDate'}}</label></div>
+				        	</div>
+				        	<div class="col-md-4 mt-3">
+				        		<a routerLink="/jobs/{{allJob._id}}" class="btn bg-btn">Check Position</a>
+				        	</div>
+				        </div>
+				      </div>			
+				    </div>
+				</div>
+			</div>
+			<!-- <div class="row">
+			  	<div class="col-md-12">
+				    <div class="card border-0 shadow p-3 mb-5 bg-body rounded">
+				      <div class="card-body">
+				        <h5 class="card-title text-primary">DevOps Engineers</h5>
+				        <p class="card-text mt-3">Devops Engineers are IT professionals who collaborate with software developers, system operators and other IT staff members to manage code releases. They cross and merge the barriers that exist between software development, testing and operations teams and keep existing networks in mind as they design, plan and test.</p>
+				        <div class="row">
+				        	<div class="col-md-4">
+				        		<div><i class="bi bi-clock"></i>&nbsp;&nbsp;<label>Full time</label></div>
+				        		<div><i class="bi bi-display"></i>&nbsp;&nbsp;<label>Work from home</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<div>Published Date&nbsp;:&nbsp;<label>January 27, 2021, 5:00:00 Pm.</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<a routerLink="/jobs/1" class="btn bg-btn">Check Position</a>
+				        	</div>
+				        </div>			
+				      </div>			
+				    </div>
+				</div>
+			</div>
+			<div class="row mt-5">
+				<div class="col-md-12">
+				    <div class="card border-0 shadow p-3 mb-5 bg-body rounded">
+				      <div class="card-body">
+				        <h5 class="card-title text-primary">Front End Developers</h5>
+				        <p class="card-text mt-3">We are looking for programmers with a keen eye for design for the position of Front End Developer. Front end Developers are responsible for ensuring the alignment of web design and user experience requirements, optimizing web pages for maximum efficiency and maintaining brand consistency across all web pages, among other duties.</p>
+				        <div class="row">
+				        	<div class="col-md-4">
+				        		<div><i class="bi bi-clock"></i>&nbsp;&nbsp;<label>Full time</label></div>
+				        		<div><i class="bi bi-display"></i>&nbsp;&nbsp;<label>Work from home</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<div>Published Date&nbsp;:&nbsp;<label>January 27, 2021, 5:00:00 Pm.</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<a routerLink="/jobs/1" class="btn bg-btn">Check Position</a>
+				        	</div>
+				        </div>
+				      </div>				      
+				    </div>
+				</div>
+			</div>
+			<div class="row">
+			  	<div class="col-md-12">
+				    <div class="card border-0 shadow p-3 mb-5 bg-body rounded">
+				      <div class="card-body">
+				        <h5 class="card-title text-primary">Cloud Engineers</h5>
+				        <p class="card-text mt-3">At BCM cloud computing continues to allow us to modernize and consolidate IT infrastructure, automate workloads, and pursue next-generation innovation. To continue this transformation, we’re seeking an experienced Amazon Web Services (AWS) cloud engineer with expertise in the strategy, design, development, and implementation of large-scale projects in the cloud. The ideal candidate is experienced in cloud-based tech, with a firm grasp of emerging technologies, platforms, and applications, and ability to customize them to help our business become more secure and efficient. Extensive knowledge of cloud maintenance.</p>
+						<div class="row">
+				        	<div class="col-md-4">
+				        		<div><i class="bi bi-clock"></i>&nbsp;&nbsp;<label>Full time</label></div>
+				        		<div><i class="bi bi-display"></i>&nbsp;&nbsp;<label>Work from home</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<div>Published Date&nbsp;:&nbsp;<label>January 27, 2021, 5:00:00 Pm.</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<a routerLink="/jobs/1" class="btn bg-btn">Check Position</a>
+				        	</div>
+				        </div>  
+				      </div>				      
+				    </div>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col-md-12">
+				    <div class="card border-0 shadow p-3 mb-5 bg-body rounded">
+				      <div class="card-body">
+				        <h5 class="card-title text-primary">Blockchain Developers</h5>
+				        <p class="card-text mt-3">We are looking for a blockchain developer who will be responsible for designing, implementing, and supporting a distributed blockchain-based network. Your primary responsibility will be analyzing requirements, designing blockchain technology around a certain business model, and the building and launching of a blockchain network, they should also have experience with at least one specific type of blockchain, like that of bitcoin or Ethereum.</p>
+				        <div class="row">
+				        	<div class="col-md-4">
+				        		<div><i class="bi bi-clock"></i>&nbsp;&nbsp;<label>Full time</label></div>
+				        		<div><i class="bi bi-display"></i>&nbsp;&nbsp;<label>Work from home</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<div>Published Date&nbsp;:&nbsp;<label>January 27, 2021, 5:00:00 Pm.</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<a routerLink="/jobs/1" class="btn bg-btn">Check Position</a>
+				        	</div>
+				        </div>
+				      </div>				      
+				    </div>
+				</div>
+			</div>
+			<div class="row">
+			  	<div class="col-md-12">
+				    <div class="card border-0 shadow p-3 mb-5 bg-body rounded">
+				      <div class="card-body">
+				        <h5 class="card-title text-primary">DevOps Engineers</h5>
+				        <p class="card-text mt-3">Devops Engineers are IT professionals who collaborate with software developers, system operators and other IT staff members to manage code releases. They cross and merge the barriers that exist between software development, testing and operations teams and keep existing networks in mind as they design, plan and test.</p>
+				        <div class="row">
+				        	<div class="col-md-4">
+				        		<div><i class="bi bi-clock"></i>&nbsp;&nbsp;<label>Full time</label></div>
+				        		<div><i class="bi bi-display"></i>&nbsp;&nbsp;<label>Work from home</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<div>Published Date&nbsp;:&nbsp;<label>January 27, 2021, 5:00:00 Pm.</label></div>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<a routerLink="/jobs/1" class="btn bg-btn">Check Position</a>
+				        	</div>
+				        </div>
+				      </div>				      
+				    </div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<hr class="text-secondary mt-5">
+</section>

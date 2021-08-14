@@ -1,0 +1,127 @@
+<header class="news-blog-header">
+   <div class="container position-relative mt-3">
+      <div class="row">
+         <div class="col-md-1"></div>
+         <div class="col-md-5">
+            <h1 class="">News & Blogs</h1>
+         </div>
+         <div class="col-md-6"></div>
+      </div>
+   </div>
+</header>
+<section class="showcase bg-white pb-3 pt-5 page-bg-white">
+   <div class="container">
+      <div class="row">
+         <div class="col-6 col-md-3 mt-2">
+            <button type="button" id="allPost" class="btn bg-btn w-100" (click)="allPosts()">All Posts</button>
+         </div>
+         <div class="col-6 col-md-3 mt-2">
+            <button type="button" id="wallet" class="btn bg-btn w-100" (click)="wallets('wallet')">Wallets</button>
+         </div>
+         <div class="col-1 col-md-1 mt-2"></div>
+         <div class="col-12 col-md-4 mt-2">
+            <div class="input-group">
+              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search...">
+             <!-- <input type="text" class="form-control" placeholder="Search" id="searchpost" value="" data-search>
+             <div class="input-group-btn">
+               <button class="btn btn-default border border-1" type="submit" (click)=newsBlogSearch()>
+                 <i class="bi bi-search"></i>
+               </button>
+             </div> -->
+           </div>
+         </div>
+      </div>
+
+      <div class="col-md-12" id="allBlogList" *ngIf="allNewsBlog?.length != 0">
+         <div class="card card-blog mt-5" *ngFor="let newBlog of allNewsBlog | filter:searchText">
+            <div class="row p-3">
+               <div class="col-md-4">
+                  <img class="w-100 img-hg" *ngIf="newBlog.file?.length != 0"
+                  [src]="sanitizeUrl('https://api.blockchainmind.com/upload/'+newBlog.file[0].filename)"
+                    alt="Blog Image"/>
+                  <img class="w-100 img-hg" *ngIf="newBlog.file?.length == 0" src="assets/images/No_Image_Available.jpg" alt="Image need to be upload" routerLink="/news-updates/{{newBlog._id}}"/>
+               </div>
+               <div class="col-md-8"  routerLink="/news-updates/{{newBlog.key}}">
+                  <div class="card-header border-0 bg-white ps-0">
+                     <div class="row row1">
+                        <div class="col-2 col-md-1 mt-3">
+                           <img src="assets/images/logo.svg" alt="BCM" />
+                        </div>
+                        <div class="col-6 col-md-4 mt-3">
+                           <div>BCM</div>
+                           <div class="text-primary">
+                           {{ newBlog.created_at | date : 'mediumDate'}}</div>
+                        </div>
+                        <!-- <div class="col-md-1 mt-3"></div> -->
+                        <div class="col-12 col-md-6 mt-3">
+                           <!-- <i class="bi bi-three-dots-vertical"></i> -->
+                          <!--  <ul class="list-inline mb-0">
+                             <li class="list-inline-item me-2">
+                                 <a href ="http://www.facebook.com/my_page"><i class="bi-facebook fs-3"></i></a>
+                             </li>
+                             <li class="list-inline-item me-2">
+                                 <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                             </li>
+                             <li class="list-inline-item me-2">
+                                 <a href="#!"><i class="bi-linkedin fs-3"></i></a>
+                             </li>
+                             <li class="list-inline-item me-2">
+                                 <a href="#!"><i class="bi-link-45deg fs-3"></i></a>
+                             </li>
+                         </ul> -->
+                         <!-- <share-buttons theme="material-dark"  [show]="iconNumber"></share-buttons> -->
+                         <share-buttons theme="modern-light" [include]="['facebook', 'twitter', 'linkedin', 'copy']"></share-buttons>
+                         <!-- <share-buttons theme="material-dark" [include]="['facebook', 'twitter', 'linkedin', 'copy']"></share-buttons> -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">{{newBlog.title}}</h5>
+                     <div class="card-text" [innerHTML]="sanitizeHtml(newBlog.description)"></div>
+                  </div>
+                  <div class="card-footer border-0 bg-white ps-0">
+                     <div class="row">
+                        <div class="col-4 col-md-3">
+                           <div><label class="text-primary">{{newBlog.view == null ? 0 : newBlog.view}}</label> views</div>
+                        </div>
+                        <div class="col-4 col-md-4" style="display: contents;">
+                           <div><label class="text-primary">{{newBlog.comments == null ? 0 : newBlog.comments}}</label> comments</div>
+                        </div>
+                        <div class="col-2 col-md-4"></div>
+                        <div class="col-2 col-md-1"  style="display: contents;">
+                           <div><label class="text-primary" style="margin-top: -1px;" id="likeUnlikeBlog_{{newBlog._id}}">{{newBlog.like == null ? 0 : newBlog.like}}</label>&nbsp;&nbsp;<i class="bi bi-heart text-danger" id="likeUnlikeBlogId_{{newBlog._id}}" (click)="likeUnlikeBlog(newBlog._id, newBlog.like)"></i></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-md-12" *ngIf="allNewsBlog?.length == 0">
+        <div class="card card-blog mt-5">
+            <div class="row p-3">
+               <div class="col-md-12">
+                  <div class="card-body">
+                     <h5 class="card-title text-center">No data available</h5>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-md-12" *ngIf="allNewsBlog?.length == 0">
+         <div class="card card-blog mt-5" routerLink="/careers" *ngFor="let newBlog of allNewsBlog">
+            <div class="row p-3">
+               <div class="col-md-12">
+                  <div class="card-body">
+                     <h5 class="card-title">No data available</h5>
+                     <p class="card-text">{{newBlog.description}}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+  </div>
+  <hr class="text-secondary mt-5">
+</section>

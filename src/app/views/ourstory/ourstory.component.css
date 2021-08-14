@@ -1,0 +1,94 @@
+
+
+*{
+    text-align: justify;
+}
+.ourstory-header {
+    background: url('/assets/images/ourstory/our_stories_desktop.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    /* background-attachment: fixed; */
+    margin-top: 5rem;
+    /* height: 10rem; */
+}
+
+.stories{
+    margin-left: 1rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .ourstory-header {
+        background: url('/assets/images/ourstory/our_stories_mobile.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: 5rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .ourstory-header {
+        background: url('/assets/images/ourstory/our_stories_mobile.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        /* background-attachment: fixed; */
+        margin-top: 5rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .ourstory-header {
+        background: url('/assets/images/ourstory/our_stories_mobile.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        background-attachment: fixed;
+        height: 100%;
+        margin-top: 5rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .ourstory-header {
+        background: url('/assets/images/ourstory/our_stories_desktop.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        background-attachment: fixed;
+        margin-top: 5rem;
+        height: 10rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .ourstory-header {
+        background: url('/assets/images/ourstory/our_stories_desktop.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        /* background-attachment: fixed; */
+        margin-top: 5rem;
+        height: auto;
+    }
+
+.stories{
+    margin-top: 4rem;
+
+}
+}

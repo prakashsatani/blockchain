@@ -1,0 +1,162 @@
+<header class="job-header bg-white page-bg-white">
+	<div class="container position-relative">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 text-center">
+				<h1>{{newsJobData.title}}</h1>
+				<button class="btn bg-btn mt-3" (click)="triggerModal()">Apply Now</button>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row mt-5 shadow p-3 bg-body rounded">
+			<div class="col-12 col-md-3">
+				<h4>Job Type &nbsp; : &nbsp;<div class="text-primary mt-3">{{newsJobData.job_type}}</div></h4>
+			</div>
+			<div class="col-12 col-md-4">
+				<h4>Job Location&nbsp; : &nbsp;<div class="text-primary mt-3">{{newsJobData.location_type}}</div></h4>
+			</div>
+			<div class="col-12 col-md-5">
+				<h4>Published Date&nbsp;:&nbsp;<div class="text-primary mt-3">{{newsJobData.published_at | date: "longDate"}}</div></h4>
+			</div>
+		</div>
+	</div>
+</header>
+<section class="showcase bg-white pb-3 pt-5">
+	<div class="container">
+		<div class="row">
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	          <div class="row">
+	            <div class="col-8 col-sm-8 col-md-3 col-lg-3 col-xl-3">
+	                <div class="bg-line"></div> 
+	            </div>
+	            <div class="col-2 col-sm-2 col-md-5 col-lg-5 col-xl-5"></div>
+	          </div>
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1"></div>
+	    </div>
+      	<h2 class="mt-3">Description</h2>
+      	<div class="row mt-3 p-3" id="descriptionJob">
+      	</div>
+	</div>
+	<div class="container mt-3">
+		<div class="row">
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	          <div class="row">
+	            <div class="col-8 col-sm-8 col-md-3 col-lg-3 col-xl-3">
+	                <div class="bg-line"></div> 
+	            </div>
+	            <div class="col-2 col-sm-2 col-md-5 col-lg-5 col-xl-5"></div>
+	          </div>
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1"></div>
+	    </div>
+      	<h2 class="mt-3">About the job</h2>
+      	<div class="row mt-3" id="aboutJob">
+      	</div>
+	</div>
+	<div class="container mt-5">
+		<div class="row">
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	          <div class="row">
+	            <div class="col-8 col-sm-8 col-md-3 col-lg-3 col-xl-3">
+	                <div class="bg-line"></div> 
+	            </div>
+	            <div class="col-2 col-sm-2 col-md-5 col-lg-5 col-xl-5"></div>
+	          </div>
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1"></div>
+	    </div>
+      	<h2 class="mt-3">Requirements</h2>
+      	<div class="row mt-3" id="requirements">
+      		
+      	</div>
+	</div>
+	<div class="container mt-5">
+		<div class="row">
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	          <div class="row">
+	            <div class="col-8 col-sm-8 col-md-3 col-lg-3 col-xl-3">
+	                <div class="bg-line"></div> 
+	            </div>
+	            <div class="col-2 col-sm-2 col-md-5 col-lg-5 col-xl-5"></div>
+	          </div>
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1">
+	        </div>
+	        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-lg-1"></div>
+	    </div>
+      	<h2 class="mt-3">About Us</h2>
+      	<div class="row mt-3">
+      		<div id="aboutUs"></div>
+      		<h5 class="mt-3">Address: </h5>
+      		<div id="address"></div>
+      	</div>
+	</div>
+	<hr class="text-secondary mt-5">
+</section>
+
+<div class="modal modal-bg" id="applyJob" tabindex="-1">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Apply</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      	<div class="alert alert-success" id="alertSuccess">
+		  <strong>Applied!</strong> Application has been submitted successful.
+		</div>
+		<div class="alert alert-error" id="alertError">
+		  <strong>Failed!</strong> Application not submitted.
+		</div>
+    	<div class="row mt-3">
+    		<div class="col-md-6">
+    			<div class="form-group">
+		        	<label for="fname">First name:</label><br>
+  					<input type="text" id="fname" [formControl]="fname" class="form-control">
+  					<label *ngIf="fname.invalid" [ngClass] = "'error'" class="text-danger"> Name required</label>
+		        </div>
+    		</div>
+	        <div class="col-md-6">
+    			<div class="form-group">
+		        	<label for="lname">Last name:</label><br>
+  					<input type="text" id="lname" [formControl]="lname" class="form-control">
+		        </div>
+    		</div>
+    	</div>
+	     
+    	<div class="form-group mt-3">
+        	<label for="email">Email: </label>
+  			<input type="email" id="email" [formControl]="email" class="form-control">
+  			<label *ngIf="email.invalid" [ngClass] = "'error'" class="text-danger"> Email required</label>
+  			<label class="text-danger" id="emailPatternRequired">Email is not valid</label>
+        </div>
+
+        <div class="form-group mt-3">
+        	<label>Phone:</label>
+        	<input type="text" class="form-control" [formControl]="phone" (keypress)="isNumber($event);">
+        	<label class="text-danger" id="phoneRequired">Phone number is not valid</label>
+        </div>
+
+        <div class="form-group mt-3">
+        	<label>Upload Resume</label>
+        	<div class="form-group">
+              <input id="file" [formControl]="file" type="file" (change)="fileChangeEvent($event)" placeholder="Upload a file..."/>
+            </div>
+            <label *ngIf="file.invalid" [ngClass] = "'error'" class="text-danger"> Resume required</label>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

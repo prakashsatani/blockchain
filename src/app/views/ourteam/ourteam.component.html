@@ -1,0 +1,36 @@
+<header class="job-header bg-white">
+	<div class="container position-relative">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+            <h3 class=" text-center">Our Teams </h3>
+				<p class="ourTeamDesc text-center mt-3">Blockchainmind is lovingly built and maintained by these fine folks</p>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+</header>
+<section class="showcase bg-white pb-3 pt-5 page-bg-white">
+	<div class="container">
+        <div class="row">
+            <div class="card card-blog mt-5" *ngFor="let team of ourTeams">
+            <div class="row p-3">
+               <div class="col-md-2 mt-2 teamImage">
+                  <img class="w-100 rounded-circle img"
+                  [src]="sanitizeUrl('https://api.blockchainmind.com/upload/'+team.image)" alt="Blog Image"/>
+               </div>
+               <div class="col-md-9 mt-2 team-details">
+                  <div class="card-header border-0 bg-white pr-3">
+                     <h5 class="card-title">{{team.name}}</h5>
+                     <h4 class="card-title text-secondary" style="margin-left: -2px;">{{team.role}}</h4>
+                     <a class="bi-linkedin" href="{{team.link}}" target="_blank"></a>
+                     <p class="card-text justify-text marginData">{{team.about}}</p>
+
+                  </div>
+
+               </div>
+            </div>
+         </div>
+        </div>
+    </div>
+</section>

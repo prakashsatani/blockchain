@@ -1,0 +1,10 @@
+:wq!
+^X
+#!/bin/bash
+
+
+git pull https://soundhar-s:Soundhar%40994@github.com/Blockchain-Mind/BCMWEBSITE Soundhar_Deployment-change
+
+sudo systemctl stop nginx
+
+sudo systemctl start nginx

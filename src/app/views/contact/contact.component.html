@@ -1,0 +1,99 @@
+<header class="contact-header">
+   <div class="container position-relative mt-3">
+      <div class="row">
+         <div class="col-md-1"></div>
+         <div class="col-md-5">
+            <h1 class="text-white">Contact</h1>
+         </div>
+         <div class="col-md-6"></div>
+      </div>
+   </div>
+</header>
+<section class="showcase bg-white pb-3 pt-5 page-bg-white">
+  <div class="container">
+   <div class="row">
+      <div class="col-md-6 mt-3">
+         <div class="row">
+            <div class="col-md-5">
+             <div class="col-2 col-sm-2 col-md-3 col-lg-3 col-xl-3 order-lg-2">
+                <div class="bg-line"></div>
+             </div>
+             <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 order-lg-1">
+             </div>
+            </div>
+           <div class="col-md-7"></div>
+         </div>
+        <h3 class="mt-3">Blockchain Mind</h3>
+        <form>
+            <div class="mt-4 mb-3 input">
+                <input type="text" #name (keyup)="onKey($event,1)" class="form-control" id="name" placeholder="FULL NAME">
+            </div>
+            <p class="error" [class.errorShow]="fullNameError != ''" [class.errorHide]="fullNameError == ''">{{fullNameError}}</p>
+            <div class="mt-4 mb-3 input">
+                <input type="phone" #phone (keyup)="onKey($event,2)" class="form-control" id="password" placeholder="PHONE">
+            </div>
+            <p class="error" [class.errorShow]="phoneError != ''" [class.errorHide]="phoneError == ''">{{phoneError}}</p>
+            <div class="mt-4 mb-3 input">
+                <input type="email"  #email (keyup)="onKey($event,3)" class="form-control" id="email" placeholder="EMAIL">
+            </div>
+            <p class="error" [class.errorShow]="emailError != ''" [class.errorHide]="emailError == ''">{{emailError}}</p>
+            <div class="mt-4 mb-3 input">
+                <input type="text" #subject (keyup)="onKey($event,4)" class="form-control" id="subject" placeholder="SUBJECT">
+            </div>
+            <p class="error" [class.errorShow]="subjectError != ''" [class.errorHide]="subjectError == ''">{{subjectError}}</p>
+            <div class="mt-4 mb-3 input">
+                <textarea class="form-control" #message  (keyup)="onKey($event,5)" id="message" placeholder="MESSAGE"></textarea>
+            </div>
+            <p class="error" [class.errorShow]="messageError != ''" [class.errorHide]="messageError == ''" [class.messageSucess]="messageError == 'Mail Send Successfully.'">{{messageError}}</p>
+            <div class="row mt-5">
+               <div class="col-4 col-md-4"></div>
+               <div>
+                  <button [disabled]="load" (click)="onClicForm()" style="width:100% !important" type="submit" class="col-md-12 btn bg-btn btn-block buttonDis">SUBMIT NOW</button>
+               </div>
+               <div class="col-4 col-md-4"></div>
+            </div>
+      </form>
+   </div>
+   <div class="col-md-6 mt-3" >
+         <div class="row">
+            <div class="col-md-5">
+             <div class="col-2 col-sm-2 col-md-3 col-lg-3 col-xl-3 order-lg-2">
+                <div class="bg-line" style="margin-top: 20px;"></div>
+             </div>
+             <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 order-lg-1">
+             </div>
+            </div>
+           <div class="col-md-7"></div>
+         </div>
+        <h3 class="mt-3">Our Address</h3>
+        <div class="mt-3 p-4">
+           <div class="row mt-3">
+           <div class="col-md-6">
+              <h5 class="card-title">Canada</h5>
+              <p class="card-text">48th Floor,<br>1 King St W,<br> Toronto, ON M5H 1A1
+              <br>Tel : +18005578226</p>
+           </div>
+           <div class="col-md-6 mob-pad ">
+              <h5 class="card-title">Australia</h5>
+              <p class="card-text">L5, 14 Railway Parade <br>Burwood <br>NSW- 2134 <br>Phone: 1300 65 11 53<br> info@iwebsystems.com.au</p>
+           </div>
+        </div>
+        <div class="row mt-3">
+           <div class="col-md-6">
+              <h5 class="card-title">India</h5>
+              <p class="card-text">H No:- 1-4-27/72/11, <br>Padmashali Colony,<br>Gandinagar, Hyderabad,<br>Telangana, India,500080</p>
+           </div>
+           <!-- <div class="col-md-6">
+              <h5 class="card-title">Call Us</h5>
+              <p class="card-text">Tel : +18002791455</p>
+           </div> -->
+        </div>
+        </div>
+      </div>
+   </div>
+   <div class="row mt-5">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.980576211106!2d-79.38023598511968!3d43.64857246074901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cd7ccb1664cf%3A0xa20fcd79fe163a0a!2sBlockchainMind!5e0!3m2!1sen!2sin!4v1623748981438!5m2!1sen!2sin" width="600" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+   </div>
+  </div>
+  <hr class="text-secondary mt-5">
+</section>
